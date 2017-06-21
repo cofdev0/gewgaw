@@ -4,7 +4,7 @@
 
     const defaultPort = 28475;
 
-    const conn = ws.connect("ws://127.0.0.1:"+defaultPort);
+    const conn = ws.connect("ws://45.32.186.169:"+defaultPort);
 
     conn.on("connect", () => {
         console.log("connected");
