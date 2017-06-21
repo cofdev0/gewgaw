@@ -18,6 +18,7 @@
   "dependencies": {
     "fs-extra": "^3.0.1",
     "nodejs-websocket": "^1.7.1",
+    "prompt": "^1.0.0",
     "restify": "^4.3.0",
     "socket.io": "^2.0.3",
     "typescript": "^2.3.4"

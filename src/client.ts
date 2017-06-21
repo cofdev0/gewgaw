@@ -1,6 +1,11 @@
 {
 
     const ws = require("nodejs-websocket");
+    const readline = require('readline');
+    const rl = readline.createInterface({
+        input: process.stdin,
+        output: process.stdout
+    });
 
     const defaultPort = 28475;
 
@@ -14,19 +19,21 @@
         console.log("closed");
     });
     conn.on("text", (text) => {
-        console.log("msg:"+text);
+        console.log("received:"+text+"\n");
     });
 
+    askForMsg();
 
-    // const IO = require("socket.io");
-    //
-    // const defaultPort = 28475;
-    //
-    // const socket = IO("127.0.0.1:"+defaultPort);
-    //
-    // socket.on("connect", function () {
-    //     socket.emit("entbox", "test");
-    //     });
 
+function askForMsg() {
+    rl.question('', (answer) => {
+
+        conn.send(answer);
+
+        //rl.close();
+        askForMsg();
+    });
+
+}
 
 }
