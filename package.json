@@ -1,0 +1,54 @@
+{
+  "jest": {
+    "transform": {
+      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+    },
+    "testRegex": "(/__tests__/.*|\\.(test|spec))\\.(ts|tsx|js)$",
+    "moduleFileExtensions": [
+      "js",
+      "jsx"
+    ]
+  },
+  "name": "gewgaw",
+  "version": "1.0.1",
+  "description": "A server to distribute messages",
+  "main": "./dist/index.js",
+  "types": "./dist/gewgaw.d.ts",
+  "dependencies": {
+    "fs-extra": "^3.0.1",
+    "nodejs-websocket": "^1.7.1",
+    "restify": "^4.3.0",
+    "socket.io": "^2.0.3",
+    "typescript": "^2.3.4"
+  },
+  "devDependencies": {
+    "@types/jest": "^19.2.3",
+    "@types/node": "^7.0.18",
+    "babel-jest": "^20.0.0",
+    "jest": "^20.0.3",
+    "ts-jest": "^20.0.3"
+  },
+  "scripts": {
+    "createTypes": "dts-generator --name gewgaw --baseDir ./src  --out dist/gewgaw.d.ts index.ts",
+    "test": "jest --coverage",
+    "start": "tsc ; node dist/server.js",
+    "tsc": "tsc"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/cofdev0/gewgaw.git"
+  },
+  "keywords": [
+    "message broker",
+    "json",
+    "network",
+    "message bus"
+  ],
+  "author": "cofdev0",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/cofdev0/gewgaw"
+  },
+  "homepage": "https://github.com/cofdev0/gewgaw"
+}
