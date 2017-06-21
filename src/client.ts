@@ -8,7 +8,7 @@
 
     conn.on("connect", () => {
         console.log("connected");
-        conn.send("testmessage");
+        conn.send("test message");
     });
     conn.on("close", (code,reason) => {
         console.log("closed");
